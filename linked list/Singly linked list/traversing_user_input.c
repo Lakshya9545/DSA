@@ -22,24 +22,6 @@ struct Node *createNode(int data)
     return newNode;
 }
 
-// Function to insert a node at the end of the linked list
-struct Node *insertAtEnd(struct Node *head, int data)
-{
-    struct Node *newNode = createNode(data);
-    if (head == NULL)
-    {
-        return newNode;
-    }
-
-    struct Node *current = head;
-    while (current->next != NULL)
-    {
-        current = current->next;
-    }
-    current->next = newNode;
-    return head;
-}
-
 // Function to traverse and print the linked list
 void traverseLinkedList(struct Node *head)
 {
@@ -60,24 +42,39 @@ int main()
     printf("Enter the number of elements you want to insert: ");
     scanf("%d", &n);
 
+    if (n <= 0)
+    {
+        printf("Invalid number of elements.\n");
+        return 1;
+    }
+
     for (int i = 0; i < n; i++)
     {
-        printf("Enter element %d: ", i + 1);
+        printf("Enter data for element %d: ", i + 1);
         scanf("%d", &data);
-        head = insertAtEnd(head, data);
+
+        struct Node *newNode = createNode(data);
+
+        if (head == NULL)
+        {
+            // If the linked list is empty, set the new node as the head
+            head = newNode;
+        }
+        else
+        {
+            // Otherwise, insert the new node at the end
+            struct Node *current = head;
+            while (current->next != NULL)
+            {
+                current = current->next;
+            }
+            current->next = newNode;
+        }
     }
 
-    printf("Singly Linked List:\n");
+    // Print the linked list
+    printf("Linked List: ");
     traverseLinkedList(head);
-
-    // Free the allocated memory for the linked list
-    struct Node *current = head;
-    while (current != NULL)
-    {
-        struct Node *temp = current;
-        current = current->next;
-        free(temp);
-    }
 
     return 0;
 }

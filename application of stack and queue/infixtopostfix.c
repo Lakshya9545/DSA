@@ -5,12 +5,10 @@
 char stack[MAX];
 char ans[MAX];
 int top = -1;
-
 void push(char x)
 {
     stack[++top] = x;
 }
-
 char pop()
 {
     if (top == -1)
