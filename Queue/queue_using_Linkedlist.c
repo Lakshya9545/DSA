@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node
-{
+struct node {
     int data;
     struct node *next;
 };
@@ -10,29 +9,23 @@ struct node
 struct node *front = NULL;
 struct node *rear = NULL;
 
-void enqueue(int x)
-{
+void enqueue(int x) {
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
     newnode->data = x;
     newnode->next = NULL;
 
-    if (front == NULL)
-    {
+    if (front == NULL) {
         front = rear = newnode;
-    }
-    else
-    {
+    } else {
         rear->next = newnode;
         rear = newnode;
     }
 }
 
-int dequeue()
-{
+int dequeue() {
     int data;
     struct node *temp;
-    if (front == NULL)
-    {
+    if (front == NULL) {
         printf("Queue is empty\n");
         return -1;
     }
@@ -43,36 +36,30 @@ int dequeue()
     return data;
 }
 
-void display()
-{
+void display() {
     struct node *temp;
-    if (front == NULL)
-    {
+    if (front == NULL) {
         printf("Queue is empty\n");
         return;
     }
     printf("Queue elements: ");
     temp = front;
-    while (temp != NULL)
-    {
+    while (temp != NULL) {
         printf("%d ", temp->data);
         temp = temp->next;
     }
     printf("\n");
 }
 
-int main()
-{
+int main() {
     int ch, data;
-    while (1)
-    {
+    while (1) {
         printf("\nMenu:\n");
         printf("1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &ch);
 
-        switch (ch)
-        {
+        switch (ch) {
         case 1:
             printf("Enter data to be enqueued: ");
             scanf("%d", &data);
@@ -80,8 +67,7 @@ int main()
             break;
         case 2:
             data = dequeue();
-            if (data != -1)
-            {
+            if (data != -1) {
                 printf("Dequeued element: %d\n", data);
             }
             break;
