@@ -20,3 +20,12 @@ int main(){
 
     return 0;
 }
+
+//pattern result
+/*
+A
+B B
+C C C
+D D D D
+E E E E E
+*/

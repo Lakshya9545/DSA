@@ -18,3 +18,11 @@ int main(){
 
     return 0;
 }
+
+//pattern result
+/*
+1
+12
+123
+1234
+*/

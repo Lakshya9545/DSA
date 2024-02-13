@@ -41,3 +41,12 @@ int main(){
 
     return 0;
 }
+
+//pattern result
+/*
+    A
+   ABA
+  ABCBA
+ ABCDCBA
+ABCDEDCBA
+*/

@@ -31,3 +31,12 @@ int main(){
 
     return 0;
 }
+
+//pattern result
+/*
+1
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1
+*/

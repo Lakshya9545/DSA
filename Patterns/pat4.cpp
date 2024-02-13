@@ -18,3 +18,10 @@ int main(){
 
     return 0;
 }
+//pattern result
+/*
+1
+2 2
+3 3 3
+4 4 4 4
+*/
