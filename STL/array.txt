@@ -1,0 +1,22 @@
+
+#include <iostream>
+#include <array>//for the array
+
+using namespace std;
+int main()
+{
+    
+    int a[5] = {1,2,3,4,5};
+    array<int,5>b = {1,2,3,4,5};
+    cout<<b.size()<<endl;//to check the size
+
+    cout<<b.at(3)<<endl;//to print the element present at index (2,3,whatever )
+
+    cout<<b.empty()<<endl;//to check wether thearray is empty or not it will return a boolean value like 0 or 1 if 0 not empty if 1 then empty 
+
+    cout<<b.front()<<endl;//to print first element
+
+    cout<<b.back()<<endl;//to pint last element
+    
+    return 0;
+}
